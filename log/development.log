@@ -612,3 +612,106 @@ Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms | Allocations: 4
 ActiveRecord::StatementInvalid (Could not find table 'active_storage_blobs'):
   
 app/controllers/posts_controller.rb:12:in `create'
+Started POST "/posts" for ::1 at 2020-10-14 09:26:27 -0400
+Processing by PostsController#create as JS
+  Parameters: {"authenticity_token"=>"lE+kL3uEAsxlc0hP9B/ERbQ3E92lF7Q8tiVS2IR3vppeKpwjZFXeXUlxWAV1ofXcYiI8W1NYd417AcN5xinA2Q==", "post"=>{"description"=>"descrption de l'image", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fcf1fa9dd00 @tempfile=#<Tempfile:/var/folders/zv/4sp7fj255sl0j7yn0hrvp_w80000gn/T/RackMultipart20201014-30835-1re3w6c.png>, @original_filename="2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[photo]\"; filename=\"2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Ajouter"}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.0ms | Allocations: 4521)
+
+
+  
+ActiveRecord::StatementInvalid (Could not find table 'active_storage_blobs'):
+  
+app/controllers/posts_controller.rb:12:in `create'
+Started GET "/posts/new" for ::1 at 2020-10-14 09:26:29 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 826)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 10.7ms | ActiveRecord: 0.2ms | Allocations: 7169)
+
+
+Started POST "/posts" for ::1 at 2020-10-14 09:26:33 -0400
+Processing by PostsController#create as JS
+  Parameters: {"authenticity_token"=>"d1ZDgEjAgtDn+XXl0yc+MwG/L2Da+aHpSrZp6I/s4VS9M3uMVxFeQcv7Za9SmQ+q16oA5iy2YliHkvhJzbKfFw==", "post"=>{"description"=>"descrption de l'image", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fcf219b8d20 @tempfile=#<Tempfile:/var/folders/zv/4sp7fj255sl0j7yn0hrvp_w80000gn/T/RackMultipart20201014-30835-xt574t.png>, @original_filename="2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[photo]\"; filename=\"2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Ajouter"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms | Allocations: 4507)
+
+
+  
+ActiveRecord::StatementInvalid (Could not find table 'active_storage_blobs'):
+  
+app/controllers/posts_controller.rb:12:in `create'
+Started POST "/posts" for ::1 at 2020-10-14 09:26:36 -0400
+Processing by PostsController#create as JS
+  Parameters: {"authenticity_token"=>"d1ZDgEjAgtDn+XXl0yc+MwG/L2Da+aHpSrZp6I/s4VS9M3uMVxFeQcv7Za9SmQ+q16oA5iy2YliHkvhJzbKfFw==", "post"=>{"description"=>"descrption de l'image", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fcf1fcdd430 @tempfile=#<Tempfile:/var/folders/zv/4sp7fj255sl0j7yn0hrvp_w80000gn/T/RackMultipart20201014-30835-6qns0.png>, @original_filename="2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[photo]\"; filename=\"2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Ajouter"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms | Allocations: 4507)
+
+
+  
+ActiveRecord::StatementInvalid (Could not find table 'active_storage_blobs'):
+  
+app/controllers/posts_controller.rb:12:in `create'
+Started POST "/posts" for ::1 at 2020-10-14 09:27:42 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#create as JS
+  Parameters: {"authenticity_token"=>"d1ZDgEjAgtDn+XXl0yc+MwG/L2Da+aHpSrZp6I/s4VS9M3uMVxFeQcv7Za9SmQ+q16oA5iy2YliHkvhJzbKfFw==", "post"=>{"description"=>"descrption de l'image", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fcf218ecab8 @tempfile=#<Tempfile:/var/folders/zv/4sp7fj255sl0j7yn0hrvp_w80000gn/T/RackMultipart20201014-30835-mxeivt.png>, @original_filename="2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[photo]\"; filename=\"2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Ajouter"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.1ms | Allocations: 21319)
+
+
+  
+ActiveRecord::StatementInvalid (Could not find table 'active_storage_blobs'):
+  
+app/controllers/posts_controller.rb:12:in `create'
+Started GET "/posts/new" for ::1 at 2020-10-14 09:27:44 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 626)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 9.3ms | ActiveRecord: 0.3ms | Allocations: 6189)
+
+
+Started GET "/posts/new" for ::1 at 2020-10-14 09:27:46 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 616)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.2ms | Allocations: 6048)
+
+
+Started POST "/posts" for ::1 at 2020-10-14 09:27:50 -0400
+Processing by PostsController#create as JS
+  Parameters: {"authenticity_token"=>"vHq8cVBKmzi5fobC6z3L+gUhsVPkhswUcf824AcaWBt2H4R9T5tHqZV8lohqg/pj0zSe1RLJD6W826dBRUQmWA==", "post"=>{"description"=>"descrption de l'image", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fcf20151f98 @tempfile=#<Tempfile:/var/folders/zv/4sp7fj255sl0j7yn0hrvp_w80000gn/T/RackMultipart20201014-30835-nydah3.png>, @original_filename="2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[photo]\"; filename=\"2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Ajouter"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms | Allocations: 4517)
+
+
+  
+ActiveRecord::StatementInvalid (Could not find table 'active_storage_blobs'):
+  
+app/controllers/posts_controller.rb:12:in `create'
