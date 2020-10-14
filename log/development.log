@@ -334,3 +334,281 @@ Processing by PostsController#index as HTML
 Completed 200 OK in 8ms (Views: 5.6ms | ActiveRecord: 0.2ms | Allocations: 5459)
 
 
+Started GET "/posts" for ::1 at 2020-10-14 09:00:52 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.0ms | Allocations: 607)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 8.3ms | ActiveRecord: 0.2ms | Allocations: 6972)
+
+
+Started GET "/posts" for ::1 at 2020-10-14 09:02:30 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 163)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 0.1ms | Allocations: 6520)
+
+
+Started GET "/posts" for ::1 at 2020-10-14 09:02:39 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 159)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 11.5ms | ActiveRecord: 0.1ms | Allocations: 6495)
+
+
+Started GET "/posts" for ::1 at 2020-10-14 09:02:48 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  Rendered posts/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 157)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 9.1ms | ActiveRecord: 0.1ms | Allocations: 6490)
+
+
+Started GET "/posts/new" for ::1 at 2020-10-14 09:02:49 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 73)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 9.7ms | ActiveRecord: 1.1ms | Allocations: 9218)
+
+
+Started GET "/posts/new" for ::1 at 2020-10-14 09:09:14 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 479)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 8.5ms | ActiveRecord: 0.8ms | Allocations: 6839)
+
+
+Started GET "/posts/new" for ::1 at 2020-10-14 09:16:52 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 378.4ms | Allocations: 149845)
+Completed 500 Internal Server Error in 396ms (ActiveRecord: 0.2ms | Allocations: 164511)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x00007fcf201ffd78>:0x00007fcf201fd870>):
+    1:   <%= form_with model: @post do |form| %>
+    2:     <%= form.text_field :description %>
+    3: 
+    4:     <%= f.label :Upload_Image %><br />
+    5:     <%= f.file_field :orgimg, :class => 'fileupload' %>
+    6:     <%= form.submit "Ajouter" %>
+    7:   <% end %>
+  
+app/views/posts/new.html.erb:4
+app/views/posts/new.html.erb:1
+Started GET "/posts/new" for ::1 at 2020-10-14 09:17:13 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 4.1ms | Allocations: 834)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 13.6ms | ActiveRecord: 0.1ms | Allocations: 7178)
+
+
+Started GET "/posts/new" for ::1 at 2020-10-14 09:17:49 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 1.9ms | Allocations: 845)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 11.9ms | ActiveRecord: 0.4ms | Allocations: 7188)
+
+
+Started GET "/posts/new" for ::1 at 2020-10-14 09:21:24 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 825)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 12.9ms | ActiveRecord: 0.4ms | Allocations: 7168)
+
+
+Started POST "/posts" for ::1 at 2020-10-14 09:21:36 -0400
+Processing by PostsController#create as JS
+  Parameters: {"authenticity_token"=>"2kLKQQkBIdo4xdkQA9ULv+yUk1WpOSRz5IVmHnZAKioQJ/JNFtD9SxTHyVqCazomOoG8019258Ipofe/NB5UaQ==", "post"=>{"description"=>"descrption de l'image", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fcf21958588 @tempfile=#<Tempfile:/var/folders/zv/4sp7fj255sl0j7yn0hrvp_w80000gn/T/RackMultipart20201014-30835-1g2bmga.png>, @original_filename="2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[photo]\"; filename=\"2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Ajouter"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 34ms (ActiveRecord: 0.4ms | Allocations: 16848)
+
+
+  
+ActiveRecord::StatementInvalid (Could not find table 'active_storage_blobs'):
+  
+app/controllers/posts_controller.rb:12:in `create'
+Started POST "/posts" for ::1 at 2020-10-14 09:21:39 -0400
+Processing by PostsController#create as JS
+  Parameters: {"authenticity_token"=>"2kLKQQkBIdo4xdkQA9ULv+yUk1WpOSRz5IVmHnZAKioQJ/JNFtD9SxTHyVqCazomOoG8019258Ipofe/NB5UaQ==", "post"=>{"description"=>"descrption de l'image", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fcf218c2538 @tempfile=#<Tempfile:/var/folders/zv/4sp7fj255sl0j7yn0hrvp_w80000gn/T/RackMultipart20201014-30835-w6karj.png>, @original_filename="2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[photo]\"; filename=\"2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Ajouter"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.3ms | Allocations: 4518)
+
+
+  
+ActiveRecord::StatementInvalid (Could not find table 'active_storage_blobs'):
+  
+app/controllers/posts_controller.rb:12:in `create'
+Started GET "/posts/new" for ::1 at 2020-10-14 09:21:55 -0400
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 678)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 9.5ms | ActiveRecord: 1.3ms | Allocations: 18992)
+
+
+Started POST "/posts" for ::1 at 2020-10-14 09:22:00 -0400
+Processing by PostsController#create as JS
+  Parameters: {"authenticity_token"=>"QLjYAXC2BKKBxU1Md6LIgyRaykBZD6bGGCbPuj2jGb2K3eANb2fYM63HXQb2HPka8k/lxq9AZXfVAl4bf/1n/g==", "post"=>{"description"=>"descrption de l'image", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fcf1fee2fa0 @tempfile=#<Tempfile:/var/folders/zv/4sp7fj255sl0j7yn0hrvp_w80000gn/T/RackMultipart20201014-30835-1ylk5rv.png>, @original_filename="2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[photo]\"; filename=\"2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Ajouter"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 12ms (ActiveRecord: 0.3ms | Allocations: 8535)
+
+
+  
+ActiveRecord::StatementInvalid (Could not find table 'active_storage_blobs'):
+  
+app/controllers/posts_controller.rb:12:in `create'
+Started POST "/posts" for ::1 at 2020-10-14 09:23:00 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#create as JS
+  Parameters: {"authenticity_token"=>"QLjYAXC2BKKBxU1Md6LIgyRaykBZD6bGGCbPuj2jGb2K3eANb2fYM63HXQb2HPka8k/lxq9AZXfVAl4bf/1n/g==", "post"=>{"description"=>"descrption de l'image", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fcf1e68d298 @tempfile=#<Tempfile:/var/folders/zv/4sp7fj255sl0j7yn0hrvp_w80000gn/T/RackMultipart20201014-30835-u2v4vc.png>, @original_filename="2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[photo]\"; filename=\"2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Ajouter"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :description, :photo[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 620)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 7.2ms | ActiveRecord: 1.3ms | Allocations: 24082)
+
+
+Started GET "/posts/new" for ::1 at 2020-10-14 09:23:01 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 616)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 8.6ms | ActiveRecord: 0.1ms | Allocations: 6043)
+
+
+Started POST "/posts" for ::1 at 2020-10-14 09:23:08 -0400
+Processing by PostsController#create as JS
+  Parameters: {"authenticity_token"=>"yD+/L1u+mmKagVoiL9KCn6aXiz8Sp80PE1N1yqmiT80CWocjRG9G87aDSmiubLMGcIKkueToDr7ed+Rr6/wxjg==", "post"=>{"description"=>"descrption de l'image", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fcf1fea2f68 @tempfile=#<Tempfile:/var/folders/zv/4sp7fj255sl0j7yn0hrvp_w80000gn/T/RackMultipart20201014-30835-r7zxtd.png>, @original_filename="2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[photo]\"; filename=\"2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Ajouter"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :description, :photo[0m
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 607)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 6.7ms | ActiveRecord: 0.1ms | Allocations: 7448)
+
+
+Started POST "/posts" for ::1 at 2020-10-14 09:23:09 -0400
+Processing by PostsController#create as JS
+  Parameters: {"authenticity_token"=>"yD+/L1u+mmKagVoiL9KCn6aXiz8Sp80PE1N1yqmiT80CWocjRG9G87aDSmiubLMGcIKkueToDr7ed+Rr6/wxjg==", "post"=>{"description"=>"descrption de l'image", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fcf1eb0f370 @tempfile=#<Tempfile:/var/folders/zv/4sp7fj255sl0j7yn0hrvp_w80000gn/T/RackMultipart20201014-30835-13d7jes.png>, @original_filename="2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[photo]\"; filename=\"2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Ajouter"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameters: :description, :photo[0m
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 607)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 7.0ms | ActiveRecord: 0.1ms | Allocations: 7440)
+
+
+Started POST "/posts" for ::1 at 2020-10-14 09:23:29 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#create as JS
+  Parameters: {"authenticity_token"=>"yD+/L1u+mmKagVoiL9KCn6aXiz8Sp80PE1N1yqmiT80CWocjRG9G87aDSmiubLMGcIKkueToDr7ed+Rr6/wxjg==", "post"=>{"description"=>"descrption de l'image", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fcf1ea40e08 @tempfile=#<Tempfile:/var/folders/zv/4sp7fj255sl0j7yn0hrvp_w80000gn/T/RackMultipart20201014-30835-31n7xf.png>, @original_filename="2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[photo]\"; filename=\"2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Ajouter"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+[31mUnpermitted parameter: :photo[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 627)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 5.8ms | ActiveRecord: 1.2ms | Allocations: 23590)
+
+
+Started POST "/posts" for ::1 at 2020-10-14 09:23:40 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#create as JS
+  Parameters: {"authenticity_token"=>"yD+/L1u+mmKagVoiL9KCn6aXiz8Sp80PE1N1yqmiT80CWocjRG9G87aDSmiubLMGcIKkueToDr7ed+Rr6/wxjg==", "post"=>{"description"=>"descrption de l'image", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fcf201b3798 @tempfile=#<Tempfile:/var/folders/zv/4sp7fj255sl0j7yn0hrvp_w80000gn/T/RackMultipart20201014-30835-1w78wq5.png>, @original_filename="2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[photo]\"; filename=\"2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Ajouter"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 41ms (ActiveRecord: 2.3ms | Allocations: 21313)
+
+
+  
+ActiveRecord::StatementInvalid (Could not find table 'active_storage_blobs'):
+  
+app/controllers/posts_controller.rb:12:in `create'
+Started POST "/posts" for ::1 at 2020-10-14 09:23:56 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#create as JS
+  Parameters: {"authenticity_token"=>"yD+/L1u+mmKagVoiL9KCn6aXiz8Sp80PE1N1yqmiT80CWocjRG9G87aDSmiubLMGcIKkueToDr7ed+Rr6/wxjg==", "post"=>{"description"=>"descrption de l'image", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fcf1e68eeb8 @tempfile=#<Tempfile:/var/folders/zv/4sp7fj255sl0j7yn0hrvp_w80000gn/T/RackMultipart20201014-30835-1cvfcmu.png>, @original_filename="2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[photo]\"; filename=\"2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Ajouter"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 26ms (ActiveRecord: 1.2ms | Allocations: 21338)
+
+
+  
+ActiveRecord::StatementInvalid (Could not find table 'active_storage_blobs'):
+  
+app/controllers/posts_controller.rb:12:in `create'
+Started GET "/posts/new" for ::1 at 2020-10-14 09:24:09 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 626)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 10.8ms | ActiveRecord: 0.2ms | Allocations: 6201)
+
+
+Started POST "/posts" for ::1 at 2020-10-14 09:24:14 -0400
+Processing by PostsController#create as JS
+  Parameters: {"authenticity_token"=>"lE+kL3uEAsxlc0hP9B/ERbQ3E92lF7Q8tiVS2IR3vppeKpwjZFXeXUlxWAV1ofXcYiI8W1NYd417AcN5xinA2Q==", "post"=>{"description"=>"descrption de l'image", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fcf1ea21710 @tempfile=#<Tempfile:/var/folders/zv/4sp7fj255sl0j7yn0hrvp_w80000gn/T/RackMultipart20201014-30835-jnaak6.png>, @original_filename="2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[photo]\"; filename=\"2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Ajouter"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.3ms | Allocations: 4521)
+
+
+  
+ActiveRecord::StatementInvalid (Could not find table 'active_storage_blobs'):
+  
+app/controllers/posts_controller.rb:12:in `create'
