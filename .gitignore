@@ -70,4 +70,5 @@ yarn-debug.log*
 
 tmp/cache/bootsnap-cache*
 tmp/cache/bootsnap-cache/*
+tmp/cache/assets/sprockets/*
 .env*

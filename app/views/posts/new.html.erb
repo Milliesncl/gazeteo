@@ -1,12 +1,9 @@
-  <%= form_with model: @post do |form| %>
+  <%= simple_form_for [@post] do |f| %>
     <div class="form-group">
-      <%= form.label :Description %><br />
-      <%= form.text_field :description %>
+      <%= f.input :description, label: "Description" %>
+      <%= f.input :photo, as: :file, label: "Télécharger une photo" %>
     </div>
-
-    <div class="form-group">
-      <%= form.label :Upload_Image %><br />
-      <%= form.file_field :photo, :class => 'fileupload' %>
-      <%= form.submit "Ajouter" %>
+    <div class="task-btn">
+      <%= f.submit "Ajouter une publication" %>
     </div>
   <% end %>

@@ -1,5 +1,7 @@
 <h1>Toutes mes publications</h1>
-<div class="posts">
-  <% @posts %>
-  <%= link_to "New post" ,new_post_path %>
-</div>
+<% @posts.each do |post| %>
+  <div class="post-display">
+    <%= post.description %>
+    <%= cl_image_tag post.photo.key, height: 300, width: 400, crop: :fill %>
+  </div>
+<% end %>
