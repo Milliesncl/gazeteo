@@ -68,6 +68,6 @@ yarn-debug.log*
 !/storage/.keep
 /public/uploads
 
-
-tmp/cache/bootsnap-*
+tmp/cache/bootsnap-cache*
+tmp/cache/bootsnap-cache/*
 .env*
