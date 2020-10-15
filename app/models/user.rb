@@ -1,5 +1,7 @@
 class User < ApplicationRecord
   has_many :posts
+  has_many :families_users
+  has_many :families, through: :family_user
   has_one_attached :photo
 
   # Include default devise modules. Others available are:
