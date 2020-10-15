@@ -918,3 +918,118 @@ Completed 200 OK in 13ms (Views: 8.4ms | ActiveRecord: 0.3ms | Allocations: 7145
 
   [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts" LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/posts/new" for ::1 at 2020-10-15 09:30:01 -0400
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 24.6ms | Allocations: 5014)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 75ms (Views: 50.9ms | ActiveRecord: 0.6ms | Allocations: 10562)
+
+
+Started POST "/posts" for ::1 at 2020-10-15 09:30:14 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"Ti7WCmO/IQEuyCvXINV8JCQjtX51l8C3WApmRivkPnKES+4GfG79kALKO52ha0298jaa+IPYAwaVLvfnabpAMQ==", "post"=>{"description"=>"descrption de l'image", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fd66dc56138 @tempfile=#<Tempfile:/var/folders/zv/4sp7fj255sl0j7yn0hrvp_w80000gn/T/RackMultipart20201015-43045-1do7zdj.png>, @original_filename="2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[photo]\"; filename=\"2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Ajouter une publication"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 9.8ms | Allocations: 4719)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 17.5ms | ActiveRecord: 0.2ms | Allocations: 11137)
+
+
+Started GET "/posts" for ::1 at 2020-10-15 09:32:05 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.2ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:2
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 945)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 11.3ms | ActiveRecord: 1.3ms | Allocations: 16032)
+
+
+Started GET "/posts/new" for ::1 at 2020-10-15 09:32:08 -0400
+Processing by PostsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/new.html.erb within layouts/application
+  Rendered posts/new.html.erb within layouts/application (Duration: 14.0ms | Allocations: 6538)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 29ms (Views: 20.1ms | ActiveRecord: 1.0ms | Allocations: 14873)
+
+
+Started POST "/posts" for ::1 at 2020-10-15 09:32:13 -0400
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"FMZpsVGzt3EAPlWKIZcBRP9BPsWe0MlaZa6W2hShu4zeo1G9TmJr4Cw8RcCgKTDdKVQRQ2ifCuuoigd7Vv/Fzw==", "post"=>{"description"=>"descrption de l'image", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fd66d236518 @tempfile=#<Tempfile:/var/folders/zv/4sp7fj255sl0j7yn0hrvp_w80000gn/T/RackMultipart20201015-43045-1nah32v.png>, @original_filename="2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[photo]\"; filename=\"2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Ajouter une publication"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (0.6ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 2.0ms | Allocations: 17660)
+
+
+  
+RuntimeError ():
+  
+app/controllers/posts_controller.rb:15:in `create'
+Started PUT "/__web_console/repl_sessions/95fa06adac1db48eb326d39f832528a2" for ::1 at 2020-10-15 09:32:31 -0400
+Started PUT "/__web_console/repl_sessions/95fa06adac1db48eb326d39f832528a2" for ::1 at 2020-10-15 09:32:32 -0400
+Started PUT "/__web_console/repl_sessions/95fa06adac1db48eb326d39f832528a2" for ::1 at 2020-10-15 09:32:55 -0400
+Started PUT "/__web_console/repl_sessions/95fa06adac1db48eb326d39f832528a2" for ::1 at 2020-10-15 09:33:15 -0400
+Started PUT "/__web_console/repl_sessions/95fa06adac1db48eb326d39f832528a2" for ::1 at 2020-10-15 09:33:15 -0400
+Started PUT "/__web_console/repl_sessions/95fa06adac1db48eb326d39f832528a2" for ::1 at 2020-10-15 09:33:23 -0400
+Started PUT "/__web_console/repl_sessions/95fa06adac1db48eb326d39f832528a2" for ::1 at 2020-10-15 09:33:32 -0400
+Started PUT "/__web_console/repl_sessions/95fa06adac1db48eb326d39f832528a2" for ::1 at 2020-10-15 09:33:33 -0400
+Started PUT "/__web_console/repl_sessions/95fa06adac1db48eb326d39f832528a2" for ::1 at 2020-10-15 09:33:35 -0400
+Started POST "/posts" for ::1 at 2020-10-15 09:33:44 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#create as HTML
+  Parameters: {"authenticity_token"=>"FMZpsVGzt3EAPlWKIZcBRP9BPsWe0MlaZa6W2hShu4zeo1G9TmJr4Cw8RcCgKTDdKVQRQ2ifCuuoigd7Vv/Fzw==", "post"=>{"description"=>"descrption de l'image", "photo"=>#<ActionDispatch::Http::UploadedFile:0x00007fd66ea64f18 @tempfile=#<Tempfile:/var/folders/zv/4sp7fj255sl0j7yn0hrvp_w80000gn/T/RackMultipart20201015-43045-192a3po.png>, @original_filename="2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png", @content_type="image/png", @headers="Content-Disposition: form-data; name=\"post[photo]\"; filename=\"2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png\"\r\nContent-Type: image/png\r\n">}, "commit"=>"Ajouter une publication"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mPost Create (1.9ms)[0m  [1m[32mINSERT INTO "posts" ("description", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["description", "descrption de l'image"], ["user_id", 1], ["created_at", "2020-10-15 13:33:45.058222"], ["updated_at", "2020-10-15 13:33:45.058222"]]
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mActiveStorage::Blob Create (0.2ms)[0m  [1m[32mINSERT INTO "active_storage_blobs" ("key", "filename", "content_type", "metadata", "byte_size", "checksum", "created_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["key", "fity9nfi3s7c5ete87uhusn91i0o"], ["filename", "2020-02-06 FY21 Kickoff - Google Slides 2020-02-06 17-52-31.png"], ["content_type", "image/png"], ["metadata", "{\"identified\":true}"], ["byte_size", 138822], ["checksum", "6NTCYvhQNoO9Jqxb6J/n2A=="], ["created_at", "2020-10-15 13:33:45.063803"]]
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mActiveStorage::Attachment Create (0.3ms)[0m  [1m[32mINSERT INTO "active_storage_attachments" ("name", "record_type", "record_id", "blob_id", "created_at") VALUES (?, ?, ?, ?, ?)[0m  [["name", "photo"], ["record_type", "Post"], ["record_id", 1], ["blob_id", 1], ["created_at", "2020-10-15 13:33:45.065508"]]
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[36mPost Update (0.1ms)[0m  [1m[33mUPDATE "posts" SET "updated_at" = ? WHERE "posts"."id" = ?[0m  [["updated_at", "2020-10-15 13:33:45.067302"], ["id", 1]]
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:12:in `create'
+[36m  Cloudinary Storage (1260.8ms) [0m[32mUploaded file to key: fity9nfi3s7c5ete87uhusn91i0o (checksum: 6NTCYvhQNoO9Jqxb6J/n2A==)[0m
+[ActiveJob] Enqueued ActiveStorage::AnalyzeJob (Job ID: 178d5002-da78-4e25-8d0c-ea3cbe0404c0) to Async(active_storage_analysis) with arguments: #<GlobalID:0x00007fd671440990 @uri=#<URI::GID gid://gazeteo/ActiveStorage::Blob/1>>
+Redirected to http://localhost:3000/posts
+Completed 302 Found in 1376ms (ActiveRecord: 5.7ms | Allocations: 200831)
+
+
+Started GET "/posts" for ::1 at 2020-10-15 09:33:46 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:2
+[ActiveJob] [ActiveStorage::AnalyzeJob] [178d5002-da78-4e25-8d0c-ea3cbe0404c0] Performing ActiveStorage::AnalyzeJob (Job ID: 178d5002-da78-4e25-8d0c-ea3cbe0404c0) from Async(active_storage_analysis) enqueued at 2020-10-15T13:33:46Z with arguments: #<GlobalID:0x00007fd6715391a8 @uri=#<URI::GID gid://gazeteo/ActiveStorage::Blob/1>>
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:5
+  Rendered posts/index.html.erb within layouts/application (Duration: 53.9ms | Allocations: 20658)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 88ms (Views: 60.0ms | ActiveRecord: 2.5ms | Allocations: 37848)
+
+
+[ActiveJob] [ActiveStorage::AnalyzeJob] [178d5002-da78-4e25-8d0c-ea3cbe0404c0] [36m  Cloudinary Storage (569.9ms) [0m[34mDownloaded file from key: fity9nfi3s7c5ete87uhusn91i0o[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [178d5002-da78-4e25-8d0c-ea3cbe0404c0] Skipping image analysis because the mini_magick gem isn't installed
+[ActiveJob] [ActiveStorage::AnalyzeJob] [178d5002-da78-4e25-8d0c-ea3cbe0404c0]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [178d5002-da78-4e25-8d0c-ea3cbe0404c0]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
+[ActiveJob] [ActiveStorage::AnalyzeJob] [178d5002-da78-4e25-8d0c-ea3cbe0404c0]   [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+[ActiveJob] [ActiveStorage::AnalyzeJob] [178d5002-da78-4e25-8d0c-ea3cbe0404c0] Performed ActiveStorage::AnalyzeJob (Job ID: 178d5002-da78-4e25-8d0c-ea3cbe0404c0) from Async(active_storage_analysis) in 597.4ms
