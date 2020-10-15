@@ -1033,3 +1033,127 @@ Completed 200 OK in 88ms (Views: 60.0ms | ActiveRecord: 2.5ms | Allocations: 378
 [ActiveJob] [ActiveStorage::AnalyzeJob] [178d5002-da78-4e25-8d0c-ea3cbe0404c0]   [1m[36mActiveStorage::Blob Update (0.4ms)[0m  [1m[33mUPDATE "active_storage_blobs" SET "metadata" = ? WHERE "active_storage_blobs"."id" = ?[0m  [["metadata", "{\"identified\":true,\"analyzed\":true}"], ["id", 1]]
 [ActiveJob] [ActiveStorage::AnalyzeJob] [178d5002-da78-4e25-8d0c-ea3cbe0404c0]   [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
 [ActiveJob] [ActiveStorage::AnalyzeJob] [178d5002-da78-4e25-8d0c-ea3cbe0404c0] Performed ActiveStorage::AnalyzeJob (Job ID: 178d5002-da78-4e25-8d0c-ea3cbe0404c0) from Async(active_storage_analysis) in 597.4ms
+Started GET "/posts" for ::1 at 2020-10-15 09:44:26 -0400
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mActiveStorage::Blob Load (0.2ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:5
+  Rendered posts/index.html.erb within layouts/application (Duration: 22.9ms | Allocations: 20064)
+Completed 500 Internal Server Error in 37ms (ActiveRecord: 0.7ms | Allocations: 31725)
+
+
+  
+ActionView::Template::Error (No route matches {:action=>"edit", :controller=>"posts"}, missing required keys: [:id]):
+    3:   <div class="post-display">
+    4:     <%= post.description %>
+    5:     <%= cl_image_tag post.photo.key, height: 300, width: 400, crop: :fill %>
+    6:     <%= link_to "Editer la publication", edit_post_path %>
+    7:     <%= link_to "Supprimer la publication", post_path(@post.id), data: { confirm: "Êtes-vous sûr.e de vouloir supprimer cette publication ?" }, method: :delete %>
+    8:   </div>
+    9: <% end %>
+  
+app/views/posts/index.html.erb:6
+app/views/posts/index.html.erb:2
+Started GET "/posts" for ::1 at 2020-10-15 09:44:39 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (1.0ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:5
+  Rendered posts/index.html.erb within layouts/application (Duration: 8.7ms | Allocations: 4114)
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 1.3ms | Allocations: 6795)
+
+
+  
+ActionView::Template::Error (undefined method `id' for nil:NilClass):
+    3:   <div class="post-display">
+    4:     <%= post.description %>
+    5:     <%= cl_image_tag post.photo.key, height: 300, width: 400, crop: :fill %>
+    6:     <%= link_to "Editer la publication", edit_post_path(@post.id) %>
+    7:     <%= link_to "Supprimer la publication", post_path(@post.id), data: { confirm: "Êtes-vous sûr.e de vouloir supprimer cette publication ?" }, method: :delete %>
+    8:   </div>
+    9: <% end %>
+  
+app/views/posts/index.html.erb:6
+app/views/posts/index.html.erb:2
+Started GET "/posts" for ::1 at 2020-10-15 09:44:55 -0400
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:2
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:5
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/posts/index.html.erb:5
+  Rendered posts/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 2892)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 23ms (Views: 18.2ms | ActiveRecord: 0.6ms | Allocations: 9272)
+
+
+Started GET "/posts/1/edit" for ::1 at 2020-10-15 09:44:57 -0400
+Processing by PostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.5ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:20:in `edit'
+  Rendering posts/edit.html.erb within layouts/application
+  Rendered posts/edit.html.erb within layouts/application (Duration: 0.3ms | Allocations: 73)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 9.3ms | ActiveRecord: 0.6ms | Allocations: 6333)
+
+
+Started DELETE "/posts/1" for ::1 at 2020-10-15 09:45:02 -0400
+Processing by PostsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"8LUXV5v9NA9dcQc3+rp3kQV0ZvAFM/uY1abTq+nOug460C9bhCzonnFzF317BEYI02FJdvN8OCkYgkIKq5DETQ==", "id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts" WHERE "posts"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:33:in `destroy'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/posts_controller.rb:34:in `destroy'
+  [1m[36mActiveStorage::Attachment Load (0.2ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "Post"], ["name", "photo"], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:34:in `destroy'
+  [1m[36mActiveStorage::Attachment Destroy (1.0ms)[0m  [1m[31mDELETE FROM "active_storage_attachments" WHERE "active_storage_attachments"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/posts_controller.rb:34:in `destroy'
+  [1m[36mPost Destroy (0.2ms)[0m  [1m[31mDELETE FROM "posts" WHERE "posts"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/posts_controller.rb:34:in `destroy'
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/posts_controller.rb:34:in `destroy'
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/posts_controller.rb:34:in `destroy'
+[ActiveJob] Enqueued ActiveStorage::PurgeJob (Job ID: 9926ab17-d8ed-42e0-b47d-ee6c484c0c04) to Async(active_storage_purge) with arguments: #<GlobalID:0x00007fd671110d10 @uri=#<URI::GID gid://gazeteo/ActiveStorage::Blob/1>>
+Redirected to http://localhost:3000/posts
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mActiveStorage::Blob Load (0.1ms)[0m  [1m[34mSELECT "active_storage_blobs".* FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 302 Found in 44ms (ActiveRecord: 4.0ms | Allocations: 10898)
+
+
+[ActiveJob] [ActiveStorage::PurgeJob] [9926ab17-d8ed-42e0-b47d-ee6c484c0c04] Performing ActiveStorage::PurgeJob (Job ID: 9926ab17-d8ed-42e0-b47d-ee6c484c0c04) from Async(active_storage_purge) enqueued at 2020-10-15T13:45:02Z with arguments: #<GlobalID:0x00007fd6711cf878 @uri=#<URI::GID gid://gazeteo/ActiveStorage::Blob/1>>
+[ActiveJob] [ActiveStorage::PurgeJob] [9926ab17-d8ed-42e0-b47d-ee6c484c0c04]   [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [9926ab17-d8ed-42e0-b47d-ee6c484c0c04]   [1m[36mActiveStorage::Attachment Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "active_storage_attachments" WHERE "active_storage_attachments"."blob_id" = ? LIMIT ?[0m  [["blob_id", 1], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [9926ab17-d8ed-42e0-b47d-ee6c484c0c04]   [1m[36mActiveStorage::Attachment Load (0.1ms)[0m  [1m[34mSELECT "active_storage_attachments".* FROM "active_storage_attachments" WHERE "active_storage_attachments"."record_id" = ? AND "active_storage_attachments"."record_type" = ? AND "active_storage_attachments"."name" = ? LIMIT ?[0m  [["record_id", 1], ["record_type", "ActiveStorage::Blob"], ["name", "preview_image"], ["LIMIT", 1]]
+[ActiveJob] [ActiveStorage::PurgeJob] [9926ab17-d8ed-42e0-b47d-ee6c484c0c04]   [1m[36mActiveStorage::Blob Destroy (0.3ms)[0m  [1m[31mDELETE FROM "active_storage_blobs" WHERE "active_storage_blobs"."id" = ?[0m  [["id", 1]]
+Started GET "/posts" for ::1 at 2020-10-15 09:45:02 -0400
+[ActiveJob] [ActiveStorage::PurgeJob] [9926ab17-d8ed-42e0-b47d-ee6c484c0c04]   [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Processing by PostsController#index as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering posts/index.html.erb within layouts/application
+  [1m[36mPost Load (0.1ms)[0m  [1m[34mSELECT "posts".* FROM "posts"[0m
+  ↳ app/views/posts/index.html.erb:2
+  Rendered posts/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 611)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 6.2ms | ActiveRecord: 0.4ms | Allocations: 6081)
+
+
+[ActiveJob] [ActiveStorage::PurgeJob] [9926ab17-d8ed-42e0-b47d-ee6c484c0c04] [36m  Cloudinary Storage (575.8ms) [0m[31mDeleted file from key: fity9nfi3s7c5ete87uhusn91i0o[0m
+[ActiveJob] [ActiveStorage::PurgeJob] [9926ab17-d8ed-42e0-b47d-ee6c484c0c04] Performed ActiveStorage::PurgeJob (Job ID: 9926ab17-d8ed-42e0-b47d-ee6c484c0c04) from Async(active_storage_purge) in 587.29ms
