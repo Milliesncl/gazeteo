@@ -1,0 +1,10 @@
+<h1>Modifier la publication</h1>
+  <%= simple_form_for [@post] do |f| %>
+    <div class="form-group">
+      <%= f.input :description, label: "Description" %>
+      <%= f.input :photo, as: :file, label: "Télécharger une photo" %>
+    </div>
+    <div class="task-btn">
+      <%= f.submit "Modifier" %>
+    </div>
+  <% end %>

@@ -1,4 +1,5 @@
 <h1>Toutes mes publications</h1>
+<%= link_to "Ajouter une publication", new_post_path %>
 <% @posts.each do |post| %>
   <div class="post-display">
     <%= post.description %>
