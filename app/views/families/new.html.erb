@@ -1,11 +1,8 @@
 <h1>Nouvelle famille</h1>
-<%= simple_form_for [@family] do |f| %>
-  <div class="form-group">
-    <%= f.input :photo, as: :file, label: "Télécharger une photo" %>
-    <%= f.input :family.family_users.user.email, html: {multipart: true}, label: "Inviter un membre dans ma famille" %>
-  </div>
-  <div class="task-btn">
-    <%= f.submit "Créer une famille" %>
-  </div>
-<% end %>
 
+<%= form_with(url: new_family_path, method: "get") do %>
+  <%= label_tag(:email, "Inviter:") %>
+  <%= email_field(:user, :email) %>
+  <%= file_field_tag 'Photo' %>
+  <%= submit_tag("Ajouter") %>
+<% end %>
