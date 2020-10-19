@@ -10,9 +10,8 @@ class FamiliesController < ApplicationController
   def create
     # params[:user_1_invited]
     @family = Family.new(family_params)
-    # @user = @family.users
     if @family.save
-      # FamilyUser.create(family_id: family.id, user_id: user.id)
+      FamilyUser.create(family_id: @family.id, user_id: current_user.id)
       # User.invite!({ email: :email }, current_user)
       redirect_to family_path(@family.id)
     else
