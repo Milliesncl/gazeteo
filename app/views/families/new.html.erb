@@ -1,8 +1,9 @@
 <h1>Nouvelle famille</h1>
 
-<%= form_with(url: new_family_path, method: "get") do %>
-  <%= label_tag(:email, "Inviter:") %>
-  <%= email_field(:user, :email) %>
-  <%= file_field_tag 'Photo' %>
-  <%= submit_tag("Ajouter") %>
+<%= form_with(model: @family) do |f| %>
+  <%= f.label(:name, "Nom de la famille :") %>
+  <%= f.text_field(:name) %>
+
+  <%= f.file_field :photo %>
+  <%= f.submit "Create" %>
 <% end %>
