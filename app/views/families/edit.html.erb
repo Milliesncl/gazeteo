@@ -1,0 +1,14 @@
+<h1>Editer ma famille</h1>
+
+<h2>Ajouter des utilisateurs</h2>
+<%= form_with(url: user_invitation_path, method: "patch") do %>
+  <%= label_tag(:email, "Inviter:") %>
+  <%= email_field(:user, :email) %>
+  <%= submit_tag("Ajouter") %>
+<% end %>
+
+<h2> Modifier la photo de famille </h2>
+<%= form_with(url: edit_family_path, method: "get") do %>
+  <%= file_field_tag 'Photo' %>
+  <%= submit_tag("Modifier") %>
+<% end %>
