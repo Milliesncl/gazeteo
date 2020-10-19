@@ -1,3 +1,6 @@
 <h1>Ma famille</h1>
-<%= @family.photo %>
-<%= @family.users %>
+
+<% if @family.photo.attached? %>
+  <%= cl_image_tag @family.photo.key, height: 300, width: 400, crop: :fill %>
+<% end %>
+<%= @family.family_users.users %>

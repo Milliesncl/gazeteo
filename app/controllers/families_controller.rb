@@ -1,6 +1,6 @@
 class FamiliesController < ApplicationController
   def show
-    @family = current_user.families.find(params[:id])
+    @family = Family.find(params[:id])
   end
 
   def new
@@ -12,7 +12,7 @@ class FamiliesController < ApplicationController
     # User.invite!(email: 'new_user@example.com', name: 'John Doe')
     @family = current_user.families.new(family_params)
     if @family.save
-      FamilyUser.create(family_id: family.id, user.id)
+      FamilyUser.create(family_id: family.id, user_id: user.id)
       redirect_to family_path(:id)
     else
       render :new
