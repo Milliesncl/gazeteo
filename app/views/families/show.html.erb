@@ -3,4 +3,8 @@
 <% if @family.photo.attached? %>
   <%= cl_image_tag @family.photo.key, height: 300, width: 400, crop: :fill %>
 <% end %>
-<%= @family.family_users.users %>
+<% @family.users.each do |user| %>
+  <%= user.email %>
+  <%= user.first_name %>
+  <%= user.last_name %>
+<% end %>
