@@ -2,7 +2,7 @@
 <%= simple_form_for [@family] do |f| %>
   <div class="form-group">
     <%= f.input :photo, as: :file, label: "Télécharger une photo" %>
-    <%= f.input :user.email, html: {multipart: true}, label: "Inviter un membre dans ma famille" %>
+    <%= f.input :family.family_users.user.email, html: {multipart: true}, label: "Inviter un membre dans ma famille" %>
   </div>
   <div class="task-btn">
     <%= f.submit "Créer une famille" %>

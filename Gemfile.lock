@@ -86,6 +86,9 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
+    devise_invitable (2.0.2)
+      actionmailer (>= 5.0)
+      devise (>= 4.6)
     domain_name (0.5.20190701)
       unf (>= 0.0.5, < 1.0.0)
     dotenv (2.7.6)
@@ -246,6 +249,7 @@ DEPENDENCIES
   cloudinary (~> 1.16.0)
   date (~> 0.0.1)
   devise
+  devise_invitable (~> 2.0.0)
   dotenv-rails
   jbuilder (~> 2.7)
   listen (~> 3.2)
