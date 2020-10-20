@@ -12,11 +12,18 @@ class FamiliesController < ApplicationController
     @family = Family.new(family_params)
     if @family.save
       FamilyUser.create(family_id: @family.id, user_id: current_user.id)
-      # User.invite!({ email: :email }, current_user)
       redirect_to family_path(@family.id)
     else
       render :new
     end
+  end
+
+  def add_member
+    @family = Family.find(params[:id])
+    add_user = User.invite!({ email: params[:user]}, current_user)
+    FamilyUser.create(family_id: @family.id, user_id: add_user.id)
+
+    redirect_to family_path(@family.id)
   end
 
   def edit

@@ -9,3 +9,9 @@
   <%= user.last_name %>
 <% end %>
 <%= link_to "Ajouter des membres de ma famille", edit_family_path %>
+
+<%= form_with(url: add_member_family_path, method: "post" ) do %>
+  <%= label_tag(:email, "Inviter:") %>
+  <%= email_field_tag(:user, :email) %>
+  <%= submit_tag("Ajouter") %>
+<% end %>
