@@ -72,3 +72,4 @@ tmp/cache/bootsnap-cache*
 tmp/cache/bootsnap-cache/*
 tmp/cache/assets/sprockets/*
 .env*
+.vscode/

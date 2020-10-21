@@ -1,4 +1,8 @@
 class FamiliesController < ApplicationController
+  def index
+    @families = current_user.families
+  end
+
   def show
     @family = Family.find(params[:id])
   end

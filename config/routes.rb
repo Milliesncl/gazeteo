@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   root to: 'pages#home'
 
   resources :posts, except: [:show]
-  resources :families, only: [:show, :new, :create, :edit, :update] do
+  resources :families, except: [:delete] do
     member do
       post :add_member
     end
