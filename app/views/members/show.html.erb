@@ -1,0 +1,7 @@
+<h1>Membre de notre famille</h1>
+
+<%= @member.first_name.capitalize %> <%= @member.last_name.capitalize %>
+<p>Date de naissance : <%= @member.birthday %></p>
+<p>Adresse : <%= @member.address %></p>
+
+<%= link_to "Voir ma famille", family_path(@family.id) %>

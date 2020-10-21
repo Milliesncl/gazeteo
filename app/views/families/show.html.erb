@@ -18,7 +18,8 @@
 
 <% if @family.members.any? %>
   <% @family.members.each do |member| %>
-    <%= member.first_name %>
+    <%= member.first_name %> <%= member.last_name %>
+    <%= link_to "Modifier", edit_family_member_path(@family.id, member.id) %>
   <% end %>
 <% else %>
   <%= link_to "Ajouter un membre pour ma famille", new_family_member_path(@family.id) %>

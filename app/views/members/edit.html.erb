@@ -1,4 +1,4 @@
-<h1>Nouveau membre</h1>
+<h1>Modifier membre</h1>
 
 <%= form_with(model: [ @family, @member ]) do |f| %>
   <%= f.label(:first_name, "Prénom :") %>
@@ -11,5 +11,5 @@
   <%= f.text_field(:address) %>
 
   <%= f.file_field :photo %>
-  <%= f.submit "Créer" %>
+  <%= f.submit "Modifier" %>
 <% end %>
