@@ -8,10 +8,18 @@
   <%= user.first_name %>
   <%= user.last_name %>
 <% end %>
-<%= link_to "Ajouter des membres de ma famille", edit_family_path %>
+<%= link_to "Ajouter des utilisateurs de ma famille", edit_family_path %>
 
 <%= form_with(url: add_member_family_path, method: "post" ) do %>
   <%= label_tag(:email, "Inviter:") %>
   <%= email_field_tag(:user, :email) %>
   <%= submit_tag("Ajouter") %>
+<% end %>
+
+<% if @family.members.any? %>
+  <% @family.members.each do |member| %>
+    <%= member.first_name %>
+  <% end %>
+<% else %>
+  <%= link_to "Ajouter un membre pour ma famille", new_family_member_path(@family.id) %>
 <% end %>

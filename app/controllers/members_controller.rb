@@ -1,5 +1,5 @@
 class MembersController < ApplicationController
-    before_action get_family
+    before_action :get_family
 
     def show
         @member = Member.find(params[:id])
@@ -10,9 +10,9 @@ class MembersController < ApplicationController
     end
 
     def create
-        @member = Member.new(members_params)
+        @member = @family.members.new(members_params)
         if @member.save
-            redirect_to family_path(@family.id)
+            redirect_to family_path(@family)
         else
             render :new
         end
@@ -20,7 +20,7 @@ class MembersController < ApplicationController
 
     def edit
     end
-    
+
     def update
     end
 
