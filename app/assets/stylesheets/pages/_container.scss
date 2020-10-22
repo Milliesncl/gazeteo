@@ -4,11 +4,20 @@
   margin: 0 auto;
   position: center;
   display: block;
+  // justify-content: center;
   font-family: arial;
-  background-color: #ffffff;
 
-  h2, h1 {
+  h1 {
     font-weight: 400;
-    font-size: larger;
+    font-size: 35px;
+    padding-top: 30px;
+    color: #707070;
+  }
+
+  h2 {
+    font-weight: 400;
+    font-size: 25px;
+    color: #707070;
+    justify-content: center;
   }
 }

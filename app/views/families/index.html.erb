@@ -1,13 +1,25 @@
 <h1>Mes familles</h1>
 
-<% @families.each do |family| %>
-    <% if family.photo.attached? %>
-    <%= image_tag family.photo, height: 300, width: 400, crop: :fill %>
+    <% @families.each do |family| %>
+    <div class="card">
+        <% if family.photo.attached? %>
+        <%= image_tag family.photo, width: 400, crop: :fill %>
+        <% end %>
+        <div class="card-infos">
+            <h2><%= family.name %></h2>
+            <% family.users.each do |user| %>
+            <ul>
+                <li><%= user.email %></li>
+                <% if user.first_name && user.last_name %>
+                    <li><%= user.first_name.capitalize %> <%= user.last_name.capitalize %></li>
+                <% end %>
+            </ul>
+            <% end %>
+        </div>
+        <div class="card-edit">
+            <%= link_to family_path(family.id) do %>
+            <%= fa_icon "pencil" %>
+            <% end %>
+        </div>
+    </div>
     <% end %>
-    <% family.users.each do |user| %>
-        <%= user.email %>
-        <%= user.first_name %>
-        <%= user.last_name %>
-    <% end %>
-    <%= link_to "Voir ma famille", family_path(family.id) %>
-<% end %>

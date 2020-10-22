@@ -34,6 +34,8 @@ gem 'simple_form'
 gem 'devise_invitable', '~> 2.0.0'
 
 gem 'date', '~> 0.0.1'
+gem "font-awesome-rails"
+
 
 
 # Reduces boot times through caching; required in config/boot.rb
