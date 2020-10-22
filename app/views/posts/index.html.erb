@@ -3,7 +3,7 @@
 <% @posts.each do |post| %>
   <div class="post-display">
     <%= post.description %>
-    <%= cl_image_tag post.photo.key, height: 300, width: 400, crop: :fill %>
+    <%= image_tag post.photo, height: 300, width: 400, crop: :fill %>
     <%= link_to "Editer la publication", edit_post_path(post.id) %>
     <%= link_to "Supprimer la publication", post_path(post.id), data: { confirm: "Êtes-vous sûr.e de vouloir supprimer cette publication ?" }, method: :delete %>
   </div>

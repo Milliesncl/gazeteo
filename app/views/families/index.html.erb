@@ -2,7 +2,7 @@
 
 <% @families.each do |family| %>
     <% if family.photo.attached? %>
-    <%= cl_image_tag family.photo.key, height: 300, width: 400, crop: :fill %>
+    <%= image_tag family.photo, height: 300, width: 400, crop: :fill %>
     <% end %>
     <% family.users.each do |user| %>
         <%= user.email %>

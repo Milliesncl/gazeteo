@@ -1,6 +1,6 @@
 <h1> Bienvenue </h1>
 <% @posts.each do |post| %>
   <%= post.user.first_name %>
-  <%= cl_image_tag post.photo.key, height: 300, width: 400, crop: :fill %>
+  <%= image_tag post.photo, height: 300, width: 400, crop: :fill %>
   <%= post.description %>
 <% end %>
