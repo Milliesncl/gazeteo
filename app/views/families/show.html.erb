@@ -1,26 +1,37 @@
-<h1>Ma famille</h1>
-
-<% if @family.photo.attached? %>
-  <%= image_tag @family.photo, height: 300, width: 400, crop: :fill %>
-<% end %>
-<% @family.users.each do |user| %>
-  <%= user.email %>
-  <%= user.first_name %>
-  <%= user.last_name %>
-<% end %>
-<%= link_to "Ajouter des utilisateurs de ma famille", edit_family_path %>
-
-<%= form_with(url: add_member_family_path, method: "post" ) do %>
-  <%= label_tag(:email, "Inviter:") %>
-  <%= email_field_tag(:user, :email) %>
-  <%= submit_tag("Ajouter") %>
-<% end %>
-
-<% if @family.members.any? %>
-  <% @family.members.each do |member| %>
-    <%= member.first_name %> <%= member.last_name %>
-    <%= link_to "Modifier", edit_family_member_path(@family.id, member.id) %>
+<h1>Ma famille - <%= @family.name %></h1>
+<div class="card">
+  <% if @family.photo.attached? %>
+    <%= image_tag @family.photo, height: 300, width: 400, crop: :fill %>
   <% end %>
-<% else %>
-  <%= link_to "Ajouter un membre pour ma famille", new_family_member_path(@family.id) %>
-<% end %>
+  <div class="card-infos">
+  <% if @family.members.any? %>
+    <h2>La gazeteo est pour :</h2>
+      <% @family.members.each do |member| %>
+        <%= member.first_name.capitalize %> <%= member.last_name.capitalize %>
+        <%= link_to "Modifier", edit_family_member_path(@family.id, member.id), class: "btn btn-ghost" %>
+      <% end %>
+    <% else %>
+      <%= link_to "Ajouter un membre pour ma famille", new_family_member_path(@family.id), class: "btn btn-ghost" %>
+  <% end %>
+
+  <h2>Les membres de la famille :</h2>
+  <% @family.users.each do |user| %>
+    <% if user.first_name && user.last_name %>
+      <ul>
+        <li><%= user.first_name.capitalize %> <%= user.last_name.capitalize %> - <%= user.email %></li>
+      </ul>
+    <% end %>
+  <% end %>
+
+    <%# <%= form_with(url: add_member_family_path, method: "post" ) do %>
+      <%# <%= label_tag(:email, "Inviter:") %>
+      <%# <%= email_field_tag(:user, :email) %>
+      <%# <%= submit_tag("Ajouter") %>
+    <%# <% end %>
+  </div>
+  <div class="card-edit">
+    <%= link_to edit_family_path(@family.id) do %>
+      <%= fa_icon "pencil" %>
+    <% end %>
+  </div>
+</div>
