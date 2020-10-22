@@ -1,7 +1,7 @@
 .card {
     overflow: hidden;
     position: relative;
-    height: 200px;
+    height: 220px;
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
     display: flex;
@@ -9,9 +9,9 @@
     margin-bottom: 15px;
   }
 
-  .card img {
+  .card > img {
     height: 100%;
-    width: 200px;
+    width: 220px;
     object-fit: cover;
   }
 
@@ -40,4 +40,9 @@
     position: absolute;
     right: 10px;
     top: 5px;
+  }
+
+  .card-infos-content {
+    flex-grow: 1;
+    padding: 0 24px;
   }

@@ -4,22 +4,29 @@
     <%= image_tag @family.photo, height: 300, width: 400, crop: :fill %>
   <% end %>
   <div class="card-infos">
+  <h2>La gazeteo est pour :</h2>
   <% if @family.members.any? %>
-    <h2>La gazeteo est pour :</h2>
       <% @family.members.each do |member| %>
+      <%= link_to image_tag(member.photo, class: "avatar-large", alt: "avatar-large"), edit_family_member_path(@family.id, member.id) %>
+      <div class="card-infos-content">
         <%= member.first_name.capitalize %> <%= member.last_name.capitalize %>
         <%= link_to "Modifier", edit_family_member_path(@family.id, member.id), class: "btn btn-ghost" %>
+      </div>
       <% end %>
     <% else %>
-      <%= link_to "Ajouter un membre pour ma famille", new_family_member_path(@family.id), class: "btn btn-ghost" %>
+      <%= link_to "Ajouter", new_family_member_path(@family.id), class: "btn btn-ghost" %>
   <% end %>
 
   <h2>Les membres de la famille :</h2>
   <% @family.users.each do |user| %>
-    <% if user.first_name && user.last_name %>
+    <% if user.first_name && user.last_name && user.photo %>
+      <%# <%= image_tag user.photo, class: "avatar-large", alt: "avatar-large" %>
       <ul>
-        <li><%= user.first_name.capitalize %> <%= user.last_name.capitalize %> - <%= user.email %></li>
+        <li>- <%= user.first_name.capitalize %> <%= user.last_name.capitalize %></li>
       </ul>
+    <% else %>
+    <p>Invitation envoyée à :</p>
+      <ul><li><%= user.email %></li></ul>
     <% end %>
   <% end %>
 
