@@ -1,17 +1,15 @@
 .card {
     overflow: hidden;
-    position: relative;
-    height: 220px;
     background: white;
     box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    height: auto;
     display: flex;
-    align-items: center;
     margin-bottom: 15px;
   }
 
   .card > img {
-    height: 100%;
-    width: 220px;
+    height: 200px;
+    width: 100%;
     object-fit: cover;
   }
 
@@ -19,7 +17,6 @@
     font-size: 12px;
     font-weight: bold;
     margin: 19px 0 3px 0;
-    flex-direction: column;
   }
 
   .card p {
@@ -28,12 +25,15 @@
     opacity: .7;
     margin-bottom: 0;
     margin-top: 8px;
-    flex-direction: column;
 
   }
 
-  .card .card-infos {
+  .card-infos {
     padding: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    position: relative;
   }
 
   .card-edit {
@@ -42,8 +42,8 @@
     top: 5px;
   }
 
-  .card-infos-content {
-    flex-grow: 1;
-    padding: 0 24px;
-    flex-direction: row;
-  }
+//   .card-infos-content {
+//     flex-grow: 1;
+//     padding: 0 24px;
+//     flex-direction: row;
+//   }
