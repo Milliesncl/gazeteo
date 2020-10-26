@@ -7,8 +7,9 @@
   <h2>La gazeteo est pour :</h2>
   <% if @family.members.any? %>
       <% @family.members.each do |member| %>
-      <%= link_to image_tag(member.photo, class: "avatar-large", alt: "avatar-large"), edit_family_member_path(@family.id, member.id) %>
       <div class="card-infos-content">
+            <%= link_to image_tag(member.photo, class: "avatar-large", alt: "avatar-large"), edit_family_member_path(@family.id, member.id) %>
+
         <%= member.first_name.capitalize %> <%= member.last_name.capitalize %>
         <%= link_to "Modifier", edit_family_member_path(@family.id, member.id), class: "btn btn-ghost" %>
       </div>
