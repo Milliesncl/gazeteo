@@ -1,3 +1,13 @@
+.global-card {
+  overflow: hidden;
+  background: white;
+  box-shadow: 4px 3px 15px rgba(0,0,0,0.1);
+  height: auto;
+  display: flex;
+  margin-bottom: 15px;
+  border-radius: 19px;
+}
+
 .card {
     overflow: hidden;
     background: white;
