@@ -1,10 +1,46 @@
 <h1> Bienvenue </h1>
 <div class="global-card">
  <div class="family-select">
+ <% if @families.exists? %>
   <div class="avatar">
-    <% if @members.first.photo.attached? %>
-      <%= image_tag @members.first.photo, height: 300, width: 400, crop: :fill %>
+    <% @members.each do |member| %>
+      <% if member.photo.attached? %>
+        <%= image_tag member.photo, class: "avatar-large", height: 300, width: 400, crop: :fill%>
+      <% end %>
+      <%= member.first_name.capitalize %> <%= member.last_name.capitalize %>
+      <p><%= member.family.users.count %> membres dans la famille</p>
+      <%= link_to new_family_member_path(member.family.id) do %>
+        <%= fa_icon "plus" %>
+      <% end %>
     <% end %>
+
+    <div class="new-post">
+      <%= simple_form_for(@post, url: posts_path) do |f| %>
+        <div class="form-group">
+          <%= f.input :description, label: "Description" %>
+          <%= f.input :photo, as: :file, label: "Télécharger une photo" %>
+        </div>
+        <div class="task-btn">
+          <%= f.submit "Ajouter une publication" %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="display-posts">
+      <% @posts.each do |post| %>
+        <div class="post-display">
+          <% if post.user.photo.attached? %>
+            <%= image_tag post.user.photo, class:"avatar", height: 300, width: 400, crop: :fill %>
+          <% end %>
+          <%= post.user.first_name.capitalize %> <%= post.user.last_name.capitalize %>
+          <%= post.description %>
+          <%= image_tag post.photo, height: 300, width: 400, crop: :fill %>
+          <%= link_to "Editer la publication", edit_post_path(post.id) %>
+          <%= link_to "Supprimer la publication", post_path(post.id), data: { confirm: "Êtes-vous sûr.e de vouloir supprimer cette publication ?" }, method: :delete %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
   </div>
   <div class="family-name">
   </div>
