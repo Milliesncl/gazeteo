@@ -1,36 +1,49 @@
 <h1> Bienvenue </h1>
 <div class="global-card">
- <div class="family-select">
- <% if @families.exists? %>
-  <div class="avatar">
-    <% @members.each do |member| %>
-      <% if member.photo.attached? %>
-        <%= image_tag member.photo, class: "avatar-large", height: 300, width: 400, crop: :fill%>
-      <% end %>
-      <%= member.first_name.capitalize %> <%= member.last_name.capitalize %>
-      <p><%= member.family.users.count %> membres dans la famille</p>
-      <%= link_to new_family_member_path(member.family.id) do %>
-        <%= fa_icon "plus" %>
-      <% end %>
+  <div class="family-select card-family">
+    <% if @families.exists? %>
+        <% @members.each do |member| %>
+          <div class="avatar">
+            <% if member.photo.attached? %>
+              <%= image_tag member.photo, class: "avatar-large", height: 300, width: 400, crop: :fill%>
+            <% end %>
+          </div>
+        <div class="member-info">
+          <div class="member-name">
+            <h3><%= member.first_name.capitalize %> <%= member.last_name.capitalize %><h3>
+          </div>
+          <div class="number-users">
+            <div class="number-users-count">
+              <p><%= member.family.users.count %> membres</p>
+            </div>
+            <div class="number-users-plus">
+              <%= link_to new_family_member_path(member.family.id) do %>
+                <%= fa_icon "plus" %>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+        </div>
     <% end %>
+  </div>
 
-    <div class="new-post">
-      <%= simple_form_for(@post, url: posts_path) do |f| %>
-        <div class="form-group">
-          <%= f.input :description, label: "Description" %>
-          <%= f.input :photo, as: :file, label: "Télécharger une photo" %>
-        </div>
-        <div class="task-btn">
-          <%= f.submit "Ajouter une publication" %>
-        </div>
-      <% end %>
-    </div>
+  <div class="new-post">
+    <%= simple_form_for(@post, url: posts_path) do |f| %>
+      <div class="form-group">
+        <%= f.input :description, label: "Description" %>
+        <%= f.input :photo, as: :file, label: "Télécharger une photo" %>
+      </div>
+      <div class="task-btn">
+        <%= f.submit "Ajouter une publication" %>
+      </div>
+    <% end %>
+  </div>
 
     <div class="display-posts">
       <% @posts.each do |post| %>
         <div class="post-display">
           <% if post.user.photo.attached? %>
-            <%= image_tag post.user.photo, class:"avatar", height: 300, width: 400, crop: :fill %>
+            <%= image_tag post.user.photo, class:"avatar-small" %>
           <% end %>
           <%= post.user.first_name.capitalize %> <%= post.user.last_name.capitalize %>
           <%= post.description %>
@@ -40,10 +53,4 @@
         </div>
       <% end %>
     </div>
-  <% end %>
-  </div>
-  <div class="family-name">
-  </div>
-  <div class="number-members">
- </div>
 </div>
