@@ -28,13 +28,14 @@
   </div>
 
   <div class="new-post">
+  <h3>Ajouter une publication</h3>
     <%= simple_form_for(@post, url: posts_path) do |f| %>
       <div class="form-group">
-        <%= f.input :description, label: "Description" %>
-        <%= f.input :photo, as: :file, label: "Télécharger une photo" %>
+        <%= f.input :description, as: :text, input_html: {rows: 5, cols: 10}, placeholder: "Description", label: false %>
+        <%= f.input :photo, as: :file, label: "Télécharger une photo", label: false %>
       </div>
-      <div class="task-btn">
-        <%= f.submit "Ajouter une publication" %>
+      <div class="form-send">
+        <%= f.submit "Ajouter une publication", class:"btn-green" %>
       </div>
     <% end %>
   </div>

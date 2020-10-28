@@ -12,3 +12,35 @@
   .btn-ghost:hover {
     opacity: 1;
   }
+
+.btn {
+    background-color: #127897;
+    width: 150px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    }
+
+.btn:hover {
+    background-color: #106c87;
+}
+
+
+.btn-green {
+  background-color: #48BB78;
+  color: white;
+  width: auto;
+  height: auto;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  transition: opacity 0.3s ease;
+}
+
+.btn-green:hover {
+  opacity: 0.9;
+}
