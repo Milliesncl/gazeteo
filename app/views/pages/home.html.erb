@@ -42,15 +42,30 @@
 
     <div class="display-posts">
       <% @posts.each do |post| %>
-        <div class="post-display">
-          <% if post.user.photo.attached? %>
-            <%= image_tag post.user.photo, class:"avatar-small" %>
-          <% end %>
-          <%= post.user.first_name.capitalize %> <%= post.user.last_name.capitalize %>
-          <%= post.description %>
-          <%= image_tag post.photo, height: 300, width: 400, crop: :fill %>
-          <%= link_to "Editer la publication", edit_post_path(post.id) %>
-          <%= link_to "Supprimer la publication", post_path(post.id), data: { confirm: "Êtes-vous sûr.e de vouloir supprimer cette publication ?" }, method: :delete %>
+        <div class="post-display card">
+          <div class="post-user">
+            <div class="post-user-avatar">
+              <% if post.user.photo.attached? %>
+                <%= image_tag post.user.photo, class:"avatar-small" %>
+              <% end %>
+            </div>
+            <div class="post-user-text">
+              <h3><%= post.user.first_name.capitalize %> <%= post.user.last_name.capitalize %></h3>
+              <p><%= post.created_at.strftime("%d/%m/%Y") %> à <%= post.created_at.strftime("%Hh%M") %></p>
+            </div>
+            <div class="post-user-link">
+              <%= link_to edit_post_path(post.id) do %>
+                <%= fa_icon "pencil" %>
+              <% end %>
+              <%= link_to post_path(post.id), data: { confirm: "Êtes-vous sûr.e de vouloir supprimer cette publication ?" }, method: :delete do %>
+                <%= fa_icon "trash" %>
+              <% end %>
+            </div>
+          </div>
+          <div class="post-info">
+            <%= image_tag post.photo%>
+            <%= post.description %>
+          </div>
         </div>
       <% end %>
     </div>

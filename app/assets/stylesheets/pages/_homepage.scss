@@ -18,3 +18,38 @@
 .new-post{
     margin: 15px 0;
 }
+
+.post-user{
+    width: auto;
+    display: inline;
+    position: relative;
+
+    h3{
+        text-transform: uppercase;
+        font-weight: 800;
+        color: #4a5568;
+    }
+
+    .post-user-avatar{
+        display: inline-block;
+    }
+
+    .post-user-text{
+        display: inline-block;
+        margin-left: 10px;
+        margin-bottom: 10px;
+        padding-bottom: 10px;
+    }
+
+    .post-info > img{
+        margin-bottom: 10px;
+    }
+
+    .post-user-link{
+        color: gray;
+        position: absolute;
+        top: 0;
+        right: 0;
+        // width: 100%;
+    }
+}
