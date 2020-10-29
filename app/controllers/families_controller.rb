@@ -36,6 +36,7 @@ class FamiliesController < ApplicationController
 
   def update
     @family = Family.find(params[:id])
+    raise
     if @family.update(family_params)
       redirect_to family_path(:id)
     else

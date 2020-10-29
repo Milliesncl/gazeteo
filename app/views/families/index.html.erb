@@ -1,12 +1,18 @@
 <h1>Mes familles</h1>
 
     <% @families.each do |family| %>
-    <div class="card">
-        <% if family.photo.attached? %>
-        <%= image_tag family.photo, width: 400, crop: :fill %>
-        <% end %>
+    <div class="global-card">
+        <div class="family-presentation">
+            <div class="family-photo">
+                <% if family.photo.attached? %>
+                    <%= image_tag family.photo %>
+                <% end %>
+            </div>
+            <div class="family-name">
+                <h2><%= family.name %></h2>
+            </div>
+        </div>
         <div class="card-infos">
-            <h2><%= family.name %></h2>
             <% family.users.each do |user| %>
             <ul>
                 <li><%= user.email %></li>
