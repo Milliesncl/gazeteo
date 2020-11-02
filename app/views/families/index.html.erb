@@ -1,6 +1,6 @@
 <h1>Mes familles</h1>
 
-    <% @families.each do |family| %>
+<% @families.each do |family| %>
     <div class="global-card">
         <div class="family-presentation">
             <div class="family-photo">
@@ -12,14 +12,42 @@
                 <h2><%= family.name %></h2>
             </div>
         </div>
+
+        <div class="family-select card-family">
+        <% family.members.each do |member| %>
+            <div class="avatar">
+                <% if member.photo.attached? %>
+                    <%= image_tag member.photo, class: "avatar-large", height: 300, width: 400, crop: :fill%>
+                <% end %>
+            </div>
+            <div class="member-users">
+                <div class="member-name">
+                    <h3><%= member.first_name.capitalize %> <%= member.last_name.capitalize %><h3>
+                </div>
+                <div class="number-users">
+                    <div class="number-users-count">
+                        <p><%= member.address %></p>
+                        <p><%= member.birthday.strftime("%d/%m/%Y") %></p>
+                    </div>
+                </div>
+            </div>
+        <% end %>
+        </div>
+
         <div class="card-infos">
             <% family.users.each do |user| %>
-            <ul>
-                <li><%= user.email %></li>
-                <% if user.first_name && user.last_name %>
-                    <li><%= user.first_name.capitalize %> <%= user.last_name.capitalize %></li>
+            <div class="avatar">
+                <% if user.photo.attached? %>
+                    <%= image_tag user.photo, class: "avatar-small", height: 300, width: 400, crop: :fill%>
                 <% end %>
-            </ul>
+            </div>
+            <div class="member-users">
+                <div class="member-name">
+                <% if user.first_name && user.last_name %>
+                    <%= user.first_name.capitalize %> <%= user.last_name.capitalize %>
+                <% end %>
+                </div>
+            </div>
             <% end %>
         </div>
         <div class="card-edit">
@@ -28,4 +56,4 @@
             <% end %>
         </div>
     </div>
-    <% end %>
+<% end %>
