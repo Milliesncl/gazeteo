@@ -14,6 +14,7 @@
         </div>
 
         <div class="family-select card-family">
+        <% if family.members.any? %>
         <% family.members.each do |member| %>
             <div class="avatar">
                 <% if member.photo.attached? %>
@@ -31,6 +32,9 @@
                     </div>
                 </div>
             </div>
+        <% end %>
+        <% else %>
+            <%= link_to "Ajouter un membre", new_family_member_path(family.id), class: "btn-ghost" %>
         <% end %>
         </div>
 
