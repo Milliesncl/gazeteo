@@ -39,23 +39,22 @@
         </div>
 
         <div class="card-infos">
+        <p>Membres de la famille: </p>
             <% family.users.each do |user| %>
             <div class="avatar">
                 <% if user.photo.attached? %>
                     <%= image_tag user.photo, class: "avatar-small", height: 300, width: 400, crop: :fill%>
                 <% end %>
             </div>
-            <div class="member-users">
-                <div class="member-name">
+            <div class="user-infos">
                 <% if user.first_name && user.last_name %>
                     <%= user.first_name.capitalize %> <%= user.last_name.capitalize %>
                 <% end %>
-                </div>
             </div>
             <% end %>
         </div>
         <div class="card-edit">
-            <%= link_to family_path(family.id) do %>
+            <%= link_to edit_family_path(family.id) do %>
             <%= fa_icon "pencil" %>
             <% end %>
         </div>
