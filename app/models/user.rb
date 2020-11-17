@@ -1,7 +1,7 @@
 class User < ApplicationRecord
-  has_many :posts
-  has_many :family_users
-  has_many :families, through: :family_users
+  has_many :posts, dependent: :destroy
+  has_many :family_users, dependent: :destroy
+  has_many :families, through: :family_users, dependent: :destroy
   has_one_attached :photo
 
   # Include default devise modules. Others available are:
@@ -9,6 +9,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :invitable
 
-  validates :first_name, :last_name, :photo, presence: true
+  validates :first_name, :last_name, presence: true
 
 end
