@@ -52,8 +52,73 @@
   border-top: 1px solid lightgray;
   margin-top: 10px;
   padding-top: 12px;
+  position: relative;
 }
 
-.card-infos .avatar{
-  display: block;
+.card-infos > p {
+    margin: 15px 0;
+    font-weight: 600;
+}
+
+.user-card {
+  display: flex;
+  flex-direction: row;
+}
+
+.card-infos-users {
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 16px;
+  display: grid;
+  justify-content: space-around;
+}
+
+// Smallest device
+@media (min-width: 100px) and (max-width: 575px) {
+  .card-infos-users {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .card-infos-users {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .card-infos-users {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .card-infos-users {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .card-infos-users {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.user-infos {
+  margin: 10px 0 0 5px;
+
+  p:first-child {
+    font-weight: 700;
+  }
+}
+
+.card-infos-link {
+  color: gray;
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin-top: 15px;
 }

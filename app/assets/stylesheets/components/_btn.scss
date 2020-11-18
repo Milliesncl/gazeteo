@@ -45,3 +45,8 @@
 .btn-green:hover {
   opacity: 0.9;
 }
+
+.simple_form > .btn-green {
+  justify-content: flex-end;
+  float: right;
+}
