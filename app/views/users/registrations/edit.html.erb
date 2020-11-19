@@ -1,4 +1,4 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h1>Modifier mon compte</h1>
 
 <div class="card w-full">
   <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
@@ -48,17 +48,16 @@
   <div class="form-cancel-right">
 
       <div class="form-actions">
-        <%= f.button :submit, "Update", class: "btn-green" %>
+        <%= f.button :submit, "Mettre à jour", class: "btn-green" %>
       </div>
     <% end %>
 
     <div class="cancel-account">
 
-      <h3>Cancel my account</h3>
 
-      <p>Unhappy? <%= link_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
+      <p><%= link_to "Supprimer mon compte", registration_path(resource_name), data: { confirm: "Êtes-vous sûr.e?" }, method: :delete %></p>
 
-      <%= link_to "Back", :back %>
+      <%= link_to "Retour", :back %>
     </div>
   </div>
 </div>

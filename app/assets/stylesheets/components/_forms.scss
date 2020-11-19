@@ -57,10 +57,27 @@
 #user_first_name, #user_last_name, #user_password, #user_password_confirmation, #user_current_password{
   border: 1px solid lightgray;
   border-radius: 3px;
-  margin: 0px 6px;
 }
 
 .form-line{
   display: flex;
   justify-content: space-between;
+}
+
+.form-inputs {
+  width: 600px;
+  height: max-content;
+  text-align: left;
+
+  .form-group {
+    width: 217px;
+
+    .form-control {
+      width: 300px;
+    }
+  }
+
+  .form-group > .user_password_confirmation {
+    width: 220px;
+  }
 }
