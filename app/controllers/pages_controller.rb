@@ -1,3 +1,5 @@
+require 'date'
+
 class PagesController < ApplicationController
   def home
     @families = current_user.families
@@ -5,6 +7,7 @@ class PagesController < ApplicationController
     @posts = Post.where(user: @family_users.pluck(:user_id)).by_created_at_desc
     @members = current_user.families.first.members
     @post = Post.new
+    @current = DateTime.now
 
   end
 end

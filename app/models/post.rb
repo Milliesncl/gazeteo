@@ -1,5 +1,6 @@
 class Post < ApplicationRecord
   belongs_to :user
+  belongs_to :gazette
   has_one_attached :photo
 
     # add photo when website in production

@@ -41,6 +41,7 @@
   </div>
 
     <div class="display-posts">
+      <%= @current.strftime("%B") %>
       <% @posts.each do |post| %>
         <div class="post-display card">
           <div class="post-user">
